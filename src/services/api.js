@@ -10,15 +10,13 @@ export async function getProductsFromCategoryAndQuery(categoryId, query) {
       .then((data) => data.json())
       .catch((err) => console.log('GetProductsFromQuery', err));
   }
-  else if (!query && categoryId) {
+  if (!query && categoryId) {
     return fetch(`https://api.mercadolibre.com/sites/MLB/search?category=${categoryId}`)
       .then((data) => data.json())
       .catch((err) => console.log('GetProductsFromCategory', err));
-  } else {
-      return fetch(`https://api.mercadolibre.com/sites/MLB/search?category=
-        ${categoryId}&q=
-        ${query}`)
-        .then((data) => data.json())
-        .catch((err) => console.log('getProductsFromCategoryAndQuery', err));
   }
+
+  return fetch(`https://api.mercadolibre.com/sites/MLB/search?category=${categoryId}&q=${query}`)
+    .then((data) => data.json())
+    .catch((err) => console.log('getProductsFromCategoryAndQuery', err));
 }
