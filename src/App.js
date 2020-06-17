@@ -9,7 +9,6 @@ import ShoppingCart from './pages/ShoppingCart';
 function App() {
   return (
     <BrowserRouter>
-        <div></div>
       <Switch>
         <Route exact path="/" component={ProductList} />
         <Route path="/product/:id" component={ProductDetails} />
