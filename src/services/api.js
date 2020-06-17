@@ -1,25 +1,24 @@
 export async function getCategories() {
-  return await fetch('https://api.mercadolibre.com/sites/MLB/categories')
-    .then(data => data.json())
-    .catch(err => console.log('getCategoriesAPI', err))
+  return fetch('https://api.mercadolibre.com/sites/MLB/categories')
+    .then((data) => data.json())
+    .catch((err) => console.log('getCategoriesAPI', err));
 }
 
 export async function getProductsFromCategoryAndQuery(categoryId, query) {
   if (!categoryId && query) {
-    return await fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${query}`)
-      .then(data => data.json())
-      .catch(err => console.log('GetProductsFromQuery', err))
+    return fetch(`https://api.mercadolibre.com/sites/MLB/search?q=${query}`)
+      .then((data) => data.json())
+      .catch((err) => console.log('GetProductsFromQuery', err));
   }
   else if (!query && categoryId) {
-    return await fetch(`https://api.mercadolibre.com/sites/MLB/search?category=${categoryId}`)
-      .then(data => data.json())
-      .catch(err => console.log('GetProductsFromCategory', err))
+    return fetch(`https://api.mercadolibre.com/sites/MLB/search?category=${categoryId}`)
+      .then((data) => data.json())
+      .catch((err) => console.log('GetProductsFromCategory', err));
   } else {
-      return await fetch(`https://api.mercadolibre.com/sites/MLB/search?category=
+      return fetch(`https://api.mercadolibre.com/sites/MLB/search?category=
         ${categoryId}&q=
         ${query}`)
-        .then(data => data.json())
-        .catch(err => console.log('getProductsFromCategoryAndQuery', err))
+        .then((data) => data.json())
+        .catch((err) => console.log('getProductsFromCategoryAndQuery', err));
   }
-}  
-
+}
