@@ -1,28 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 // import something from 'somewere'
 // só pra commitar
-//hehe
+import {Route, BrowserRouter, Switch} from 'react-router-dom'
+
+import emptyPage from './pages/CartPage';
+import CartButton from './components/CartButton';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <CartButton />
+      <Switch>
+        <Route exact path="/cart" component={emptyPage} />
+      </Switch>
+    </BrowserRouter>
+      
   );
 }
 
