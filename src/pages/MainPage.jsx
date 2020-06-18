@@ -1,15 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class ProductList extends React.Component {
+import { getProductsFromCategoryAndQuery } from '../services/api';
+import Search from '../components/Search';
+
+class ProductList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchInput: '',
+      results: null,
+      categoryId: null,
+
+    };
+    this.onHandleChange = this.onHandleChange.bind(this);
+    this.updateResults = this.updateResults.bind(this);
+  }
+
+  onHandleChange(event) {
+    this.setState({ searchInput: event.target.value })
+  }
+
+  updateResults(categoryId, searchInput) {
+    getProductsFromCategoryAndQuery(categoryId, searchInput).then(({ results }) => {
+      this.setState({
+        results,
+      })
+    })
+  }
+
   render() {
     return (
       <div>
-        <div>
-          <h3>Categorias:</h3>
-        </div>
-        <div data-testid="home-initial-message">
-          <h1>Digite algum termo de pesquisa ou escolha uma categoria.</h1>
-        </div>
+
       </div>
     );
   }
