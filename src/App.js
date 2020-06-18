@@ -20,4 +20,3 @@ function App() {
 }
 
 export default App;
->>>>>>> d5094f1cadacb7265db3820e22c3a4a4116769d5
