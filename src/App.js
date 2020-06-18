@@ -4,15 +4,15 @@ import './App.css';
 import CheckoutPage from './pages/Checkout';
 import ProductDetailsPage from './pages/ProductDetails';
 import MainPage from './pages/MainPage';
-import ShoppingCartPage from './pages/ShoppingCart';
+import ShoppingCartPage from './pages/ShoppingCartPage';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={MainPage} />
-        <Route path="/product/:id" component={ProductDetailsPage} />
         <Route path="/cart" component={ShoppingCartPage} />
+        <Route path="/product/:id" component={ProductDetailsPage} />
         <Route path="/checkout" component={CheckoutPage} />
       </Switch>
     </BrowserRouter>
