@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import * as api from '../../services/api';
 
 function CategorieInput(elem) {
   return (
@@ -18,17 +17,8 @@ function CategorieInput(elem) {
 }
 
 class Categories extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { categories: '' };
-  }
-
-  componentDidMount() {
-    api.getCategories().then((results) => this.setState({ categories: results }));
-  }
-
   render() {
-    const { categories } = this.state;
+    const { categories } = this.props;
     if (!categories) return <span>Loading...</span>;
     return (
       <div>
