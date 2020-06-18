@@ -1,10 +1,8 @@
 import React from 'react';
 import Categories from '../components/products/Categories';
 import Product from '../components/products/Product';
-// import CartButton from '../components/products/CartButton';
 import * as api from '../services/api';
 import { Link } from 'react-router-dom';
-
 
 class ProductList extends React.Component {
   constructor(props) {
@@ -21,8 +19,7 @@ class ProductList extends React.Component {
 
   render() {
     const { products, categories } = this.state;
-
-     if (products === '') {
+    if (products === '') {
       return (
         <div>
           <aside>
