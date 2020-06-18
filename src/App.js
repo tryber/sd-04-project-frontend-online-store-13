@@ -5,13 +5,14 @@ import './App.css';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 
 import emptyPage from './pages/CartPage';
-import CartButton from './components/CartButton';
+
 
 function App() {
   return (
     <BrowserRouter>
-      <CartButton />
+      
       <Switch>
+        <Route path="/" component={emptyPage} />
         <Route exact path="/cart" component={emptyPage} />
       </Switch>
     </BrowserRouter>
