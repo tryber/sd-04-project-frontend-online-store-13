@@ -9,7 +9,7 @@ class ProductList extends React.Component {
     super(props);
     this.state = {
       products: '',
-      categories: []
+      categories: [],
     };
   }
 
@@ -18,13 +18,13 @@ class ProductList extends React.Component {
   }
 
   render() {
-    const { products, categories} = this.state;
+    const { products, categories } = this.state;
     if (products === '') {
       return (
         <div>
           <aside>
             <form>
-            <Categories categories={categories} />
+              <Categories categories={categories} />
             </form>
           </aside>
           <div data-testid="home-initial-message">

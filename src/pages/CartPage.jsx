@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CartButton from '../components/CartButton';
+
 class emptyPage extends Component {
   render() {
     return (

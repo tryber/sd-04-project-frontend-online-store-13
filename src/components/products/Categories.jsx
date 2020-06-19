@@ -24,8 +24,8 @@ class Categories extends Component {
     super(props);
     this.state= {
       selectedOption: '',
-      produto: []
-    }
+      produto: [],
+    };
   }
 
   optionChange = event => {
@@ -48,4 +48,4 @@ class Categories extends Component {
   }
 }
 
-export default Categories;
+export default Categories;  
