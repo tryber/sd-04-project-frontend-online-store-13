@@ -30,7 +30,7 @@ class Categories extends Component {
   optionChange(event) {
     console.log(event.target.id);
     this.setState(
-      {selectedOption: event.target.id}
+      { selectedOption: event.target.id },
     );
     return api.getProductsFromCategoryAndQuery(this.state.selectedOption, '').then((results) => this.setState({ produto: results }));
   }
