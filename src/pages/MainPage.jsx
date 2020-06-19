@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 
-import { getProductsFromCategoryAndQuery } from "../services/api";
+import * as api from "../services/api";
+
 import Search from "../components/Search";
 import MainContent from "../components/MainContent";
+import Categories from "../components/Categories";
 
 class ProductList extends Component {
   constructor(props) {
@@ -17,6 +19,15 @@ class ProductList extends Component {
     };
     this.onHandleChange = this.onHandleChange.bind(this);
     this.updateResults = this.updateResults.bind(this);
+    this.onHandleRadio = this.onHandleRadio.bind(this);
+  }
+
+  componentDidMount() {
+    api.getCategories().then((categories) => this.setState({ categories }));
+  }
+
+  onHandleRadio(categoryId, searchInput) {
+    this.setState({ categoryId }, this.updateResults(categoryId, searchInput));
   }
 
   onHandleChange(event) {
@@ -24,20 +35,26 @@ class ProductList extends Component {
   }
 
   updateResults(categoryId, searchInput) {
-    getProductsFromCategoryAndQuery(categoryId, searchInput).then(
-      ({ results }) => {
+    api
+      .getProductsFromCategoryAndQuery(categoryId, searchInput)
+      .then(({ results }) => {
         this.setState({
           results,
           isLoading: true,
+          notFound: results.length === 0,
         });
-      }
-    );
+      });
   }
 
   render() {
-    const { searchInput, categoryId, results } = this.state;
+    const { searchInput, categoryId, results, categories, isLoading, notFound } = this.state;
+    const Mainprops = { results, isLoading, notFound };
     return (
       <div>
+        <Categories
+          categories={categories}
+          onHandleRadio={this.onHandleRadio}
+        />
         <Search
           searchInput={searchInput}
           categoryId={categoryId}
@@ -45,10 +62,7 @@ class ProductList extends Component {
           updateResults={this.updateResults}
         />
         <main>
-          <MainContent
-            results={results}
-            isLoading={isLoading}
-          />
+          <MainContent {...Mainprops} />
         </main>
       </div>
     );

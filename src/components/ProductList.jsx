@@ -4,10 +4,11 @@ import ProductCard from "../components/ProductCard";
 
 class ProductList extends Component {
   render() {
-    const { products } = this.props;
+    const { products, notFound } = this.props;
     return (
       <div>
-        {products.map((product) => (
+        { notFound && <p>Nenhum produto foi encontrado</p>}
+        { products && products.map((product) => (
           <div key={product.id}>
             <ProductCard product={product} />
           </div>
