@@ -11,8 +11,8 @@ function CategorieInput(elem, selectedOption, optionChange) {
         value={elem.name}
         checked={selectedOption === elem.id}
         onChange={optionChange}
-        />
-        {elem.name}
+      />
+      {elem.name}
     </label>
   );
 }
@@ -29,9 +29,11 @@ class Categories extends Component {
 
   optionChange(event) {
     console.log(event.target.id);
-    this.setState({
+    this.setState(
+      {
       selectedOption: event.target.id,
-    });
+      }
+    );
     return api.getProductsFromCategoryAndQuery(this.state.selectedOption, '').then((results) => this.setState({ produto: results }));
   }
 
