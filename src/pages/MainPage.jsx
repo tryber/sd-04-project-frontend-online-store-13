@@ -1,8 +1,8 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import Categories from '../components/products/Categories';
 import Product from '../components/products/Product';
 import * as api from '../services/api';
-
 
 class ProductList extends React.Component {
   constructor(props) {
@@ -19,16 +19,18 @@ class ProductList extends React.Component {
 
   render() {
     const { products, categories } = this.state;
-
     if (products === '') {
       return (
         <div>
           <aside>
-            <Categories categories={categories} />
+            <form>
+              <Categories categories={categories} />
+            </form>
           </aside>
           <div data-testid="home-initial-message">
             <h1>Digite algum termo de pesquisa ou escolha uma categoria.</h1>
           </div>
+          <Link data-testid="shopping-cart-button" to="/cart" > Carrinho </Link>
         </div>
       );
     }
