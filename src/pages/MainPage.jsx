@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import { getProductsFromCategoryAndQuery } from "../services/api";
 import Search from "../components/Search";
+import MainContent from "../components/MainContent";
 
 class ProductList extends Component {
   constructor(props) {
@@ -9,7 +10,10 @@ class ProductList extends Component {
     this.state = {
       searchInput: "",
       results: null,
+      categories: [],
       categoryId: null,
+      notFound: false,
+      isLoading: false,
     };
     this.onHandleChange = this.onHandleChange.bind(this);
     this.updateResults = this.updateResults.bind(this);
@@ -24,6 +28,7 @@ class ProductList extends Component {
       ({ results }) => {
         this.setState({
           results,
+          isLoading: true,
         });
       }
     );
@@ -39,6 +44,12 @@ class ProductList extends Component {
           onHandleChange={this.onHandleChange}
           updateResults={this.updateResults}
         />
+        <main>
+          <MainContent
+            results={results}
+            isLoading={isLoading}
+          />
+        </main>
       </div>
     );
   }

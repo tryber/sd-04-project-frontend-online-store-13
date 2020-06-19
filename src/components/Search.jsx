@@ -2,12 +2,7 @@ import React, { Component } from "react";
 
 class Search extends Component {
   render() {
-    const {
-      searchInput,
-      categoryId,
-      onHandleChange,
-      updateResults,
-    } = this.props;
+    const { searchInput, categoryId, onHandleChange, updateResults } = this.props;
     return (
       <div>
         <nav>
