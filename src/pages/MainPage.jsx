@@ -14,7 +14,6 @@ class ProductList extends Component {
       results: null,
       categories: [],
       categoryId: null,
-      notFound: false,
       isLoading: false,
     };
     this.onHandleChange = this.onHandleChange.bind(this);
@@ -41,14 +40,13 @@ class ProductList extends Component {
         this.setState({
           results,
           isLoading: true,
-          notFound: results.length === 0,
         });
       });
   }
 
   render() {
-    const { searchInput, categoryId, results, categories, isLoading, notFound } = this.state;
-    const Mainprops = { results, isLoading, notFound };
+    const { searchInput, categoryId, results, categories, isLoading } = this.state;
+    const Mainprops = { results, isLoading };
     return (
       <div>
         <Categories

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class ProductCard extends Component {
   render() {
@@ -9,7 +9,7 @@ class ProductCard extends Component {
         <h6> R$ {price} </h6>
         <h5> {title} </h5>
       </div>
-    )
+    );
   }
 }
 
