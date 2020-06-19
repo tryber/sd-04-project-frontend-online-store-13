@@ -26,9 +26,10 @@ class Categories extends Component {
       selectedOption: '',
       produto: [],
     };
+    this.optionChange = this.optionChange.bind(this);
   }
 
-  optionChange = event => {
+  optionChange(event) {
     console.log(event.target.id)
     this.setState({
       selectedOption: event.target.id
