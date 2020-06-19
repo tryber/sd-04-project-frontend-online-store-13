@@ -1,15 +1,15 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import Categories from '../components/products/Categories';
 import Product from '../components/products/Product';
 import * as api from '../services/api';
-import { Link } from 'react-router-dom';
 
 class ProductList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       products: '',
-      categories: [],
+      categories: []
     };
   }
 
@@ -18,12 +18,14 @@ class ProductList extends React.Component {
   }
 
   render() {
-    const { products, categories } = this.state;
+    const { products, categories} = this.state;
     if (products === '') {
       return (
         <div>
           <aside>
+            <form>
             <Categories categories={categories} />
+            </form>
           </aside>
           <div data-testid="home-initial-message">
             <h1>Digite algum termo de pesquisa ou escolha uma categoria.</h1>
