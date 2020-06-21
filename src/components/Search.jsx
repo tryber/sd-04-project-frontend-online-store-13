@@ -1,10 +1,14 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
-import CartButton from "./CartButton";
+import { Link } from "react-router-dom";
 
 class Search extends Component {
   render() {
-    const { searchInput, categoryId, onHandleChange, updateResults } = this.props;
+    const {
+      searchInput,
+      categoryId,
+      onHandleChange,
+      updateResults,
+    } = this.props;
     return (
       <div>
         <nav>
@@ -21,7 +25,10 @@ class Search extends Component {
           >
             Pesquisar
           </button>
-          <Link data-testid="shopping-cart-button" to="/cart" > Carrinho </Link>
+          <Link data-testid="shopping-cart-button" to="/cart">
+            {" "}
+            Carrinho{" "}
+          </Link>
         </nav>
       </div>
     );

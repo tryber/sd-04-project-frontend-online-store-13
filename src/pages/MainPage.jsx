@@ -45,7 +45,13 @@ class ProductList extends Component {
   }
 
   render() {
-    const { searchInput, categoryId, results, categories, isLoading } = this.state;
+    const {
+      searchInput,
+      categoryId,
+      results,
+      categories,
+      isLoading,
+    } = this.state;
     const Mainprops = { results, isLoading };
     return (
       <div>
