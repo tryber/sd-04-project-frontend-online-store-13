@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import * as api from "../services/api";
+import * as api from '../services/api';
 
-import Search from "../components/Search";
-import MainContent from "../components/MainContent";
-import Categories from "../components/Categories";
+import Search from '../components/Search';
+import MainContent from '../components/MainContent';
+import Categories from '../components/Categories';
 
 class ProductList extends Component {
   constructor(props) {
