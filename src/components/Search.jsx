@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
+import { Link } from 'react-router-dom';
 class Search extends Component {
   render() {
-    const {
-      searchInput,
-      categoryId,
-      onHandleChange,
-      updateResults,
-    } = this.props;
+    const { searchInput, categoryId, onHandleChange, updateResults } = this.props;
     return (
       <div>
         <nav>
