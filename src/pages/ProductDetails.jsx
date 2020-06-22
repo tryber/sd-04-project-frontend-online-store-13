@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductDetailInfo from '../components/products/ProductDetailInfo';
+import ProductDetailInfo from '../components/ProductDetailInfo';
 import * as api from '../services/api';
 
 
@@ -12,7 +12,8 @@ class ProductDetails extends React.Component {
   componentDidMount() {
     // eslint-disable-next-line react/destructuring-assignment
     const searchId = this.props.match.params.id;
-    api.getProductsFromCategoryAndQuery(searchId).then((result) => this.setState({ product: result }));
+    api.getProductsFromCategoryAndQuery(searchId)
+      .then((result) => this.setState({ product: result }));
   }
 
   render() {

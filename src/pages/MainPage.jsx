@@ -1,45 +1,68 @@
-import React from 'react';
-import Categories from '../components/products/Categories';
-import Product from '../components/products/Product';
+/* eslint-disable react/jsx-props-no-spreading */
+import React, { Component } from 'react';
+
 import * as api from '../services/api';
 
+import Search from '../components/Search';
+import MainContent from '../components/MainContent';
+import Categories from '../components/Categories';
 
-class ProductList extends React.Component {
+class ProductList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: '',
+      searchInput: '',
+      results: null,
       categories: [],
+      categoryId: null,
+      isLoading: false,
     };
+    this.onHandleChange = this.onHandleChange.bind(this);
+    this.updateResults = this.updateResults.bind(this);
+    this.onHandleRadio = this.onHandleRadio.bind(this);
   }
 
   componentDidMount() {
-    api.getCategories().then((results) => this.setState({ categories: results }));
+    api.getCategories().then((categories) => this.setState({ categories }));
+  }
+
+  onHandleRadio(categoryId, searchInput) {
+    this.setState({ categoryId }, this.updateResults(categoryId, searchInput));
+  }
+
+  onHandleChange(event) {
+    this.setState({ searchInput: event.target.value });
+  }
+
+  updateResults(categoryId, searchInput) {
+    api
+      .getProductsFromCategoryAndQuery(categoryId, searchInput)
+      .then(({ results }) => {
+        this.setState({
+          results,
+          isLoading: true,
+        });
+      });
   }
 
   render() {
-    const { products, categories } = this.state;
-
-    if (products === '') {
-      return (
-        <div>
-          <aside>
-            <Categories categories={categories} />
-          </aside>
-          <div data-testid="home-initial-message">
-            <h1>Digite algum termo de pesquisa ou escolha uma categoria.</h1>
-          </div>
-        </div>
-      );
-    }
+    const { searchInput, categoryId, results, categories, isLoading } = this.state;
+    const Mainprops = { results, isLoading };
     return (
       <div>
-        <aside>
-          <Categories categories={categories} />
-        </aside>
-        <div>
-          {products.map((e) => <Product product={e} />)}
-        </div>
+        <Categories
+          categories={categories}
+          onHandleRadio={this.onHandleRadio}
+        />
+        <Search
+          searchInput={searchInput}
+          categoryId={categoryId}
+          onHandleChange={this.onHandleChange}
+          updateResults={this.updateResults}
+        />
+        <main>
+          <MainContent {...Mainprops} />
+        </main>
       </div>
     );
   }
