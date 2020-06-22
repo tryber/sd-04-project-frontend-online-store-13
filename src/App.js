@@ -13,9 +13,9 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={MainPage} />
-        {/* <Route path="/product/:id" component={ProductDetailsPage} />
+        <Route path="/product/:id" component={ProductDetailsPage} />
         <Route path="/cart" component={ShoppingCartPage} />
-        <Route path="/checkout" component={CheckoutPage} /> */}
+        <Route path="/checkout" component={CheckoutPage} />
       </Switch>
     </BrowserRouter>
   );
