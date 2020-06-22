@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Link } from 'react-router-dom';
+
 class Search extends Component {
   render() {
     const { searchInput, categoryId, onHandleChange, updateResults } = this.props;
@@ -19,6 +21,9 @@ class Search extends Component {
           >
             Pesquisar
           </button>
+          <Link data-testid="shopping-cart-button" to="/cart">
+            Carrinho
+          </Link>
         </nav>
       </div>
     );
