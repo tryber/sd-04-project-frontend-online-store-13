@@ -10,7 +10,7 @@ class ProductList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchInput: "",
+      searchInput: '',
       results: null,
       categories: [],
       categoryId: null,

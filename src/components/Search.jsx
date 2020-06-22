@@ -26,8 +26,7 @@ class Search extends Component {
             Pesquisar
           </button>
           <Link data-testid="shopping-cart-button" to="/cart">
-            {" "}
-            Carrinho{" "}
+            Carrinho
           </Link>
         </nav>
       </div>
