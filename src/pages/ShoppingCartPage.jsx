@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class ShoppingCartPage extends Component {
-  render() {  
+  render() {
     return (
       <div>
         <h1 data-testid="shopping-cart-empty-message">
