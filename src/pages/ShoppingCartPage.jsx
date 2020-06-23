@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-
-class emptyPage extends Component {
+class ShoppingCartPage extends Component {
   render() {
     return (
       <div>
@@ -13,4 +12,4 @@ class emptyPage extends Component {
   }
 }
 
-export default emptyPage;
+export default ShoppingCartPage;

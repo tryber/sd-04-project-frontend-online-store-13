@@ -6,7 +6,7 @@ class MainContent extends Component {
     const { results, isLoading, notFound } = this.props;
 
     return (
-      <div>
+      <div className="jumbotron">
         {!isLoading && (
           <p data-testid="home-initial-message">
             Digite algum termo de pesquisa ou escolha uma categoria.
