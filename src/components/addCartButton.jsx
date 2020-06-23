@@ -5,13 +5,13 @@ class CartButton extends Component {
     super(props);
     this.ola = this.ola.bind(this);
   }
-  
-  ola = (click) => {
+
+  ola(click) {
     if (!sessionStorage.carrinho) sessionStorage.carrinho = JSON.stringify([]);
     const carrinho = JSON.parse(sessionStorage.carrinho);
     const colocarList = [...carrinho, click];
     sessionStorage.carrinho = JSON.stringify(colocarList);
-  };
+  }
 
   render() {
     return (

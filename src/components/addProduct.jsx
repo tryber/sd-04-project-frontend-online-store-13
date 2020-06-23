@@ -4,7 +4,7 @@ class addProduct extends Component {
   render() {
     return (
       <p>colocar no carrinho</p>
-    )
+    );
   }
 }
 
