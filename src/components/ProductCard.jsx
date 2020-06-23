@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
-import CartButton from './addCartButton';
+import AddCartButton from './AddCartButton';
 
 class ProductCard extends Component {
   render() {
@@ -17,7 +17,7 @@ class ProductCard extends Component {
               <Link to={{ pathname: `/product/${id}`, state: { product } }} data-testid="product-detail-link">Ver detalhes</Link>
             </div>
             <div className="card-footer">
-              <CartButton product={this.props.product} />
+              <AddCartButton product={this.props.product} />
             </div>
           </div>
         </div>

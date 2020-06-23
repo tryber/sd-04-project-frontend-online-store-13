@@ -1,28 +1,29 @@
-// import React, { Component } from "react";
+import React, { Component } from 'react';
 
-// class AddCartButton extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = { productCart: [], };
-//   }
+class AddCartButton extends Component {
 
-//   addProduto(product) {
-//     this.setState({ productCart: [...productCart, product] });
-//   }
+  constructor(props) {
+    super(props);
+    this.addSession = this.addSession.bind(this);
+  }
 
-//   render() {
-//     const { product } = this.props;
+  addSession(product) {
+    if (!sessionStorage.carrinho) sessionStorage.carrinho = JSON.stringify([]);
+    const carrinho = JSON.parse(sessionStorage.carrinho);
+    const colocarList = [...carrinho, product];
+    sessionStorage.carrinho = JSON.stringify(colocarList);
+  }
 
-//     return (
-//       <div>
-//         <button onClick={() => this.addProduto(product)}>
-//           <Link data-testid="product-add-to-cart" to="/cart">
-//             {productCart}
-//           </Link>
-//         </button>
-//       </div>
-//     );
-//   }
-// }
+  render() {
+    return (
+      <button
+        data-testid="product-add-to-cart"
+        onClick={() => this.addSession(this.props.product)}
+      >
+        add carrinho
+      </button>
+    );
+  }
+}
 
-// export default AddCartButton;
+export default AddCartButton;
