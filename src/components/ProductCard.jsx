@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import CartButton from './CartButton'
-
+import CartButton from './addCartButton';
 
 class ProductCard extends Component {
   render() {
@@ -10,7 +9,7 @@ class ProductCard extends Component {
         <img src={thumbnail} alt={title} />
         <h6> R$ {price} </h6>
         <h5> {title} </h5>
-        <CartButton product={this.props.product}/>
+        <CartButton product={this.props.product} />
       </div>
     );
   }
