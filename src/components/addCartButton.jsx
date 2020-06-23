@@ -6,7 +6,7 @@ class CartButton extends Component {
     this.addSession = this.addSession.bind(this);
   }
 
-  addSession(product) {
+  static addSession(product) {
     if (!sessionStorage.carrinho) sessionStorage.carrinho = JSON.stringify([]);
     const carrinho = JSON.parse(sessionStorage.carrinho);
     const colocarList = [...carrinho, product];
