@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class shoppingCardPage extends Component {
+class ShoppingCardPage extends Component {
   constructor(props) {
     super(props);
     this.state = { cartItem: [] };
@@ -37,4 +37,4 @@ class shoppingCardPage extends Component {
   }
 }
 
-export default shoppingCardPage;
+export default ShoppingCardPage;

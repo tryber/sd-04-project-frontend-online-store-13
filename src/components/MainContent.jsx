@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import ProductList from '../components/ProductList';
+import ProductList from './ProductList';
 
 class MainContent extends Component {
   render() {
     const { results, isLoading, notFound } = this.props;
 
     return (
-      <div>
+      <div className="jumbotron">
         {!isLoading && (
           <p data-testid="home-initial-message">
             Digite algum termo de pesquisa ou escolha uma categoria.

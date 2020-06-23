@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { Component } from 'react';
 
 import * as api from '../services/api';
@@ -49,17 +50,19 @@ class ProductList extends Component {
     const Mainprops = { results, isLoading };
     return (
       <div>
-        <Categories
-          categories={categories}
-          onHandleRadio={this.onHandleRadio}
-        />
+        <div className="category-list" >
+          <Categories
+            categories={categories}
+            onHandleRadio={this.onHandleRadio}
+          />
+        </div>
         <Search
           searchInput={searchInput}
           categoryId={categoryId}
           onHandleChange={this.onHandleChange}
           updateResults={this.updateResults}
         />
-        <main>
+        <main role="main" className="container">
           <MainContent {...Mainprops} />
         </main>
       </div>
