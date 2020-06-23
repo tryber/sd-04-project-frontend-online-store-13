@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class addProduct extends Component {
   render() {
-    return(
+    return (
       <p>colocar no carrinho</p>
     )
   }
