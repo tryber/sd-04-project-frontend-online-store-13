@@ -55,7 +55,6 @@ class ProductList extends Component {
             onHandleRadio={this.onHandleRadio}
           />
         </div>
-        
         <Search
           searchInput={searchInput}
           categoryId={categoryId}
