@@ -1,12 +1,19 @@
-import { Link } from 'react-router-dom';
-import React, { Component } from 'react';
+
+import React, { Component } from "react";
 
 class CartButton extends Component {
+  ola = (click) => {
+    if (!sessionStorage.carrinho) sessionStorage.carrinho= JSON.stringify([]);
+    const carrinho = JSON.parse(sessionStorage.carrinho);
+    const colocarList = [...carrinho, click ]
+    sessionStorage.carrinho= JSON.stringify(colocarList);
+  }
+
   render() {
     return (
-      <div data-testid="shopping-cart-button">
-        <Link to="/cart"> Carrinho </Link>
-      </div>
+      <button data-testid="product-add-to-cart" onClick={() => this.ola(this.props.product)}>
+          add carrinho
+      </button>
     );
   }
 }
