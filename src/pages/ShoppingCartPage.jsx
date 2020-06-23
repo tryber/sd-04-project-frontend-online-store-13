@@ -14,9 +14,7 @@ class shoppingCardPage extends Component {
   }
 
   atualizar() {
-    this.setState({
-      cartItem: JSON.parse(sessionStorage.carrinho),
-    });
+    this.setState({ cartItem: JSON.parse(sessionStorage.carrinho) });
   }
 
   render() {

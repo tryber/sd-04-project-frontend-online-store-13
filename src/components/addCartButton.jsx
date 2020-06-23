@@ -14,7 +14,7 @@ class CartButton extends Component {
   }
 
   render() {
-    const { product } = this.props 
+    const { product } = this.props;
     return (
       <button
         data-testid="product-add-to-cart"
