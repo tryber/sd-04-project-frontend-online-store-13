@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
-
-class emptyPage extends Component {
-  render() {
+class ShoppingCartPage extends Component {
+  render() {    
     return (
       <div>
         <h1 data-testid="shopping-cart-empty-message">
@@ -13,4 +12,4 @@ class emptyPage extends Component {
   }
 }
 
-export default emptyPage;
+export default ShoppingCartPage;

@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 
-import { Link } from 'react-router-dom';
+import CartButton from '../components/CartButton';
 
 class Search extends Component {
   render() {
     const { searchInput, categoryId, onHandleChange, updateResults } = this.props;
     return (
       <div>
-        <nav>
+        <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <span className="navbar-brand col-md-3 col-lg-2 mr-0 px-3">
+            SPA - Mercado Livre - MIT
+          </span>
           <input
             type="text"
+            className="form-control form-control-dark w-100"
             data-testid="query-input"
             value={searchInput}
             onChange={(event) => onHandleChange(event)}
@@ -21,9 +25,7 @@ class Search extends Component {
           >
             Pesquisar
           </button>
-          <Link data-testid="shopping-cart-button" to="/cart">
-            Carrinho
-          </Link>
+          <CartButton />
         </nav>
       </div>
     );
