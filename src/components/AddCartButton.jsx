@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 
 class AddCartButton extends Component {
-
   constructor(props) {
     super(props);
     this.addSession = this.addSession.bind(this);
