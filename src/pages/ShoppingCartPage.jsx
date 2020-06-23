@@ -4,13 +4,21 @@ class shoppingCardPage extends Component {
   constructor(props) {
     super(props);
     this.state = { cartItem: [] };
+
+    this.atualizar = this.atualizar.bind(this);
   }
+
   componentDidMount() {
     if (!sessionStorage.carrinho) sessionStorage.carrinho = JSON.stringify([]);
+    this.atualizar();
+  }
+
+  atualizar() {
     this.setState({
       cartItem: JSON.parse(sessionStorage.carrinho),
     });
   }
+
   render() {
     const { cartItem } = this.state;
 
