@@ -3,10 +3,10 @@ import React from 'react';
 function AddCartButton(props) {
   const { product } = props;
 
-  const addSession = (product) => {
+  const addSession = (itemProduct) => {
     if (!sessionStorage.carrinho) sessionStorage.carrinho = JSON.stringify([]);
     const carrinho = JSON.parse(sessionStorage.carrinho);
-    const colocarList = [...carrinho, product];
+    const colocarList = [...carrinho, itemProduct];
     sessionStorage.carrinho = JSON.stringify(colocarList);
   };
 
