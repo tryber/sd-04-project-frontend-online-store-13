@@ -1,7 +1,7 @@
 import React from 'react';
 
 function AddCartButton(props) {
-  const { product } = props;
+  const { product, testid } = props;
 
   const addSession = (itemProduct) => {
     if (!sessionStorage.carrinho) sessionStorage.carrinho = JSON.stringify([]);
@@ -11,8 +11,8 @@ function AddCartButton(props) {
   };
 
   return (
-    <button
-      data-testid="product-add-to-cart"
+      <button
+      data-testid = {testid}
       onClick={() => addSession(product)}
     >
       add carrinho

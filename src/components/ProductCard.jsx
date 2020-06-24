@@ -17,7 +17,7 @@ class ProductCard extends Component {
               <Link to={{ pathname: `/product/${id}`, state: { product } }} data-testid="product-detail-link">Ver detalhes</Link>
             </div>
             <div className="card-footer">
-              <AddCartButton product={this.props.product} />
+              <AddCartButton product={this.props.product} testid="product-add-to-cart" />
             </div>
           </div>
         </div>

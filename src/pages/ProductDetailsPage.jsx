@@ -1,5 +1,7 @@
-import React from 'react';
-import ProductDetailInfo from '../components/ProductDetailInfo';
+import React from "react";
+import ProductDetailInfo from "../components/ProductDetailInfo";
+import AddCartButton from '../components/AddCartButton';
+import CartButton from '../components/CartButton';
 
 class ProductDetailsPage extends React.Component {
   render() {
@@ -7,6 +9,8 @@ class ProductDetailsPage extends React.Component {
     return (
       <div>
         <ProductDetailInfo product={product} />
+        <AddCartButton product={product} testid="product-detail-add-to-cart" />
+        <CartButton />
       </div>
     );
   }
