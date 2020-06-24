@@ -1,5 +1,5 @@
-import React from "react";
-import ProductDetailInfo from "../components/ProductDetailInfo";
+import React from 'react';
+import ProductDetailInfo from '../components/ProductDetailInfo';
 import AddCartButton from '../components/AddCartButton';
 import CartButton from '../components/CartButton';
 

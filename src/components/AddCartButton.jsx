@@ -11,11 +11,11 @@ function AddCartButton(props) {
   };
 
   return (
-      <button
-      data-testid = {testid}
+    <button
+      data-testid={testid}
       onClick={() => addSession(product)}
     >
-      add carrinho
+    add carrinho
     </button>
   );
 }
