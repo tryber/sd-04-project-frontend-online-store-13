@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FaStar } from 'react-icons/fa';
 import '../style/Rating.css';
 
-class Rationg extends Component {
+class Rating extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,18 +31,20 @@ class Rationg extends Component {
     const arrValuation = [1, 2, 3, 4, 5];
 
     return (
-      <div>
+      <div className="card border-primary mb-3" style={{ width: '18rem' }}>
         <textarea
+          className="card-img-top"
           data-testid="product-detail-evaluation"
           rows="8"
           value={comment}
           onChange={(e) => this.onHandleChange(e.target.value)}
         />
-        <div>
+        <div className="card-body">
           <h5 className="card-title">Avaliação</h5>
           {arrValuation.map((star, index) => (
             <label htmlFor={index} key={star}>
               <input
+                className="star"
                 type="radio"
                 id={index}
                 onClick={() => this.onHandleClick(index + 1)}
@@ -51,7 +53,7 @@ class Rationg extends Component {
             </label>
           ))}
         </div>
-        <button onClick={this.onHandleClean}>Enviar</button>
+        <button className="btn btn-primary" onClick={this.onHandleClean}>Enviar</button>
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductDetailInfo from '../components/ProductDetailInfo';
+import Rating from '../components/Rating';
 
 class ProductDetailsPage extends React.Component {
   render() {
@@ -7,6 +8,7 @@ class ProductDetailsPage extends React.Component {
     return (
       <div>
         <ProductDetailInfo product={product} />
+        <Rating />
       </div>
     );
   }
