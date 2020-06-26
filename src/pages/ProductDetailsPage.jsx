@@ -3,7 +3,6 @@ import React from 'react';
 import ProductDetailInfo from '../components/ProductDetailInfo';
 import Rating from '../components/Rating';
 import AddCartButton from '../components/AddCartButton';
-import CartButton from '../components/CartButton';
 
 class ProductDetailsPage extends React.Component {
   render() {
