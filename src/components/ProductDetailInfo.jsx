@@ -1,12 +1,12 @@
-
 import React from 'react';
+
+import CardButton from '../components/CartButton';
 
 class ProductDetailInfo extends React.Component {
   render() {
-    // eslint-disable-next-line react/destructuring-assignment
     const { price, thumbnail, title } = this.props.product;
-    // eslint-disable-next-line react/destructuring-assignment
     const availableQuantity = this.props.product.available_quantity;
+
     return (
       <div>
         <div>
@@ -15,6 +15,7 @@ class ProductDetailInfo extends React.Component {
           <p>{`Preço: $${price}`}</p>
           <p>{`Quantidade Disponível: ${availableQuantity}`}</p>
           <p>Informações Adicionais: </p>
+          <CardButton />
         </div>
       </div>
     );
