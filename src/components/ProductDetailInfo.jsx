@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+
 import React from 'react';
 
 class ProductDetailInfo extends React.Component {
@@ -15,9 +15,6 @@ class ProductDetailInfo extends React.Component {
           <p>{`Preço: $${price}`}</p>
           <p>{`Quantidade Disponível: ${availableQuantity}`}</p>
           <p>Informações Adicionais: </p>
-          <div>
-            <Link to="/cart">Ir para o Carrinho</Link>
-          </div>
         </div>
       </div>
     );

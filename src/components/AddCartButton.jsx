@@ -1,28 +1,23 @@
-// import React, { Component } from "react";
+import React from 'react';
 
-// class AddCartButton extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = { productCart: [], };
-//   }
+function AddCartButton(props) {
+  const { product, testid } = props;
 
-//   addProduto(product) {
-//     this.setState({ productCart: [...productCart, product] });
-//   }
+  const addSession = (itemProduct) => {
+    if (!sessionStorage.carrinho) sessionStorage.carrinho = JSON.stringify([]);
+    const carrinho = JSON.parse(sessionStorage.carrinho);
+    const colocarList = [...carrinho, itemProduct];
+    sessionStorage.carrinho = JSON.stringify(colocarList);
+  };
 
-//   render() {
-//     const { product } = this.props;
+  return (
+    <button
+      data-testid={testid}
+      onClick={() => addSession(product)}
+    >
+    add carrinho
+    </button>
+  );
+}
 
-//     return (
-//       <div>
-//         <button onClick={() => this.addProduto(product)}>
-//           <Link data-testid="product-add-to-cart" to="/cart">
-//             {productCart}
-//           </Link>
-//         </button>
-//       </div>
-//     );
-//   }
-// }
-
-// export default AddCartButton;
+export default AddCartButton;
