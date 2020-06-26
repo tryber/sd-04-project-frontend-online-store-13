@@ -32,8 +32,8 @@ class ShoppingCardPage extends Component {
             <div>
               <h6> R$ {element.price} </h6>
               <h5 data-testid="shopping-cart-product-name">
-                {" "}
-                {element.title}{" "}
+                {' '}
+                {element.title}{' '}
               </h5>
               <p data-testid="shopping-cart-product-quantity"> 1 </p>
             </div>
