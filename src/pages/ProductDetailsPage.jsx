@@ -13,7 +13,6 @@ class ProductDetailsPage extends React.Component {
         <ProductDetailInfo product={product} />
         <Rating />
         <AddCartButton product={product} testid="product-detail-add-to-cart" />
-        <CartButton />
       </div>
     );
   }

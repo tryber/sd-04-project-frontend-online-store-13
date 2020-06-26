@@ -22,14 +22,14 @@ class ShoppingCardPage extends Component {
 
     return (
       <div>
-        {!cartItem.length && (
+        {cartItem.length === 0 && (
           <div data-testid="shopping-cart-empty-message">
             Seu carrinho está vazio
           </div>
         )}
-        {cartItem.length &&
+        {cartItem.length > 0 &&
           cartItem.map((element) => (
-            <div>
+            <div key={element.title}>
               <h6> R$ {element.price} </h6>
               <h5 data-testid="shopping-cart-product-name">
                 {element.title}
