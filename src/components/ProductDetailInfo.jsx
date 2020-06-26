@@ -6,7 +6,7 @@ class ProductDetailInfo extends React.Component {
   render() {
     const { price, thumbnail, title } = this.props.product;
     const availableQuantity = this.props.product.available_quantity;
-    
+
     return (
       <div>
         <div>
