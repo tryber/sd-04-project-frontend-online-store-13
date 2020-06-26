@@ -20,20 +20,26 @@ class ShoppingCardPage extends Component {
   render() {
     const { cartItem } = this.state;
 
-    if (cartItem.length === 0) {
-      return (
-        <div data-testid="shopping-cart-empty-message">
-          Seu carrinho está vazio
-        </div>
-      );
-    }
-    return cartItem.map((element) => (
+    return (
       <div>
-        <h6> R$ {element.price} </h6>
-        <h5 data-testid="shopping-cart-product-name"> {element.title} </h5>
-        <p data-testid="shopping-cart-product-quantity"> 1 </p>
+        {cartItem.length === 0 && (
+          <div data-testid="shopping-cart-empty-message">
+            Seu carrinho está vazio
+          </div>
+        )}
+        {cartItem.length > 0 &&
+          cartItem.map((element) => (
+            <div>
+              <h6> R$ {element.price} </h6>
+              <h5 data-testid="shopping-cart-product-name">
+                {" "}
+                {element.title}{" "}
+              </h5>
+              <p data-testid="shopping-cart-product-quantity"> 1 </p>
+            </div>
+          ))}
       </div>
-    ));
+    );
   }
 }
 
