@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 
+import CardButton from '../components/CartButton';
+
 class ProductDetailInfo extends React.Component {
   render() {
     // eslint-disable-next-line react/destructuring-assignment
@@ -15,9 +17,7 @@ class ProductDetailInfo extends React.Component {
           <p>{`Preço: $${price}`}</p>
           <p>{`Quantidade Disponível: ${availableQuantity}`}</p>
           <p>Informações Adicionais: </p>
-          <div>
-            <Link to="/cart">Ir para o Carrinho</Link>
-          </div>
+          <CardButton />
         </div>
       </div>
     );
